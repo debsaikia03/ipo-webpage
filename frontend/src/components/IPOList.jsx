@@ -151,7 +151,7 @@ const IPOList = () => {
     return (
         <div className="px-4 py-6 sm:px-8 md:px-12 lg:px-24 bg-gray-100">
             <span className="block mb-4 text-sm sm:text-base md:text-lg cursor-pointer">
-                <span className="text-blue-600 font-semibold">Blustock</span>
+                <span className="text-blue-600 font-semibold">Bluestock</span>
                 <span> &gt; </span>
                 <span className="text-blue-600 font-semibold">IPO</span>
                 <span> &gt; UPCOMING IPO</span>
