@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 
 const Navbar = () => {
@@ -27,10 +28,16 @@ const Navbar = () => {
 
       {/* Right - Auth Buttons */}
       <div className="flex gap-4 items-center">
-        <button className="text-sm text-gray-600 bg-gray-200 px-4 py-1.5 rounded hover:text-blue-600 hidden lg:block">Sign In</button>
-        <button className="bg-blue-600  text-white text-sm px-4 py-1.5 rounded hover:bg-blue-700 hidden lg:block">
-          Sign Up Now
-        </button>
+        <Link to="/login">
+          <button className="text-sm text-gray-600 bg-gray-200 px-4 py-1.5 rounded hover:text-blue-600 hidden lg:block">
+            Sign In
+          </button>
+        </Link>
+        <Link to="/signup">
+          <button className="bg-blue-600  text-white text-sm px-4 py-1.5 rounded hover:bg-blue-700 hidden lg:block">
+            Sign Up Now
+          </button>
+        </Link>
         {/* Hamburger Button (Always visible) */}
         <button
           className="p-2"
@@ -51,14 +58,18 @@ const Navbar = () => {
             <li className="hover:text-blue-600 cursor-pointer w-full">MEDIA</li>
             <li className="hover:text-blue-600 cursor-pointer w-full">SUPPORT</li>
             <li className="self-start w-fit">
-              <button className="w-fit text-left rounded bg-gray-200 text-gray-600 hover:text-blue-600 px-4 py-2 mt-1">
-                Sign In
-              </button>
+              <Link to="/login">
+                <button className="w-fit text-left rounded bg-gray-200 text-gray-600 hover:text-blue-600 px-4 py-2 mt-1">
+                  Sign In
+                </button>
+              </Link>
             </li>
             <li className="self-start w-fit">
-              <button className="w-fit text-left bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 mt-1">
-                Sign Up Now
-              </button>
+              <Link to="/signup">
+                <button className="w-fit text-left bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 mt-1">
+                  Sign Up Now
+                </button>
+              </Link>
             </li>
           </ul>
         </div>
