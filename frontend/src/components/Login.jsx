@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { EyeIcon, EyeSlashIcon } from '@heroicons/react/24/outline';
+
 
 const Login = () => {
   const [formData, setFormData] = useState({
@@ -21,6 +23,9 @@ const Login = () => {
     // Signup api calls
     console.log(formData);
   };
+
+  const [showPassword, setShowPassword] = useState(false);
+
 
   return (
     <div className="min-h-screen bg-white flex items-center justify-center px-4 sm:px-6 lg:px-8" style={{ fontFamily: "'Poppins', sans-serif" }}>
@@ -66,15 +71,41 @@ const Login = () => {
                 </a>
               </div>
 
-              <input
-                name="password"
-                type="password"
-                required
-                value={formData.password}
-                onChange={handleChange}
-                className="mt-1 block w-full px-4 h-12 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm"
-              />
+              <div className="relative">
+                <input
+                  name="password"
+                  type={showPassword ? 'text' : 'password'}
+                  required
+                  value={formData.password}
+                  onChange={handleChange}
+                  className="mt-1 block w-full px-4 h-12 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 text-sm pr-10"
+                />
+                <div
+                  className="absolute inset-y-0 right-3 flex items-center cursor-pointer"
+                  onClick={() => setShowPassword(!showPassword)}
+                >
+                  {showPassword ? (
+                    <EyeSlashIcon className="h-5 w-5 text-gray-500" />
+                  ) : (
+                    <EyeIcon className="h-5 w-5 text-gray-500" />
+                  )}
+                </div>
+              </div>
             </div>
+
+          {/* reCAPTCHA (placeholder) */}
+          <div className="border border-gray-500 rounded-3xl px-5 py-5 flex items-center justify-between">
+            <label className="flex items-center gap-2 text-sm">
+              <input type="checkbox" className="accent-[#34A853]" />
+              I’m not a robot
+            </label>
+            <img
+              src="https://www.gstatic.com/recaptcha/api2/logo_48.png"
+              alt="reCAPTCHA"
+              className="h-6"
+            />
+          </div>
+
 
 
           </div>
@@ -104,9 +135,18 @@ const Login = () => {
             </button>
           </div>
 
-          <div className="mt-4 flex items-center gap-2">
+
+
+          {/* OR Divider with gray box text */}
+          <div className="flex items-center gap-2">
             <div className="flex-grow border-t border-gray-300"></div>
-            <span className="text-gray-500 text-sm whitespace-nowrap">or sign in with</span>
+
+            <div className="bg-gray-100 px-3 py-1">
+              <span className="text-gray-600 text-sm font-medium whitespace-nowrap">
+                or sign in with
+              </span>
+            </div>
+
             <div className="flex-grow border-t border-gray-300"></div>
           </div>
 
