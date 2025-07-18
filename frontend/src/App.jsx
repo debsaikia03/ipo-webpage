@@ -8,6 +8,7 @@ import ForgotPass from './components/ForgotPass.jsx'
 import Dashboard from './components/Dashboard.jsx'
 import IPOScreen from './components/IPOScreen.jsx'
 import RegisterIPO from './components/RegisterIPO.jsx'
+import IPODashboard from './components/IPOAdminDashboard.jsx'
 
 function App() {
 
@@ -40,6 +41,10 @@ function App() {
     {
       path: "/register-ipo",
       element: <RegisterIPO />,
+    },
+    {
+      path: "/admin-dashboard",
+      element: <IPODashboard />,
     }
   ]);
 
