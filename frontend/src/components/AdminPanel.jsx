@@ -1,12 +1,12 @@
-// src/components/AdminPanel.jsx
 import React, { useState } from "react";
 import { BellIcon, MagnifyingGlassIcon, Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { FaArrowUp } from "react-icons/fa";
 import UpcomingIpoDashboard from "./UpcomingIPODashboard";
 
+
 const IPOAdminDashboardContent = () => (
-  <div className="p-6 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-    {/* Cards and sections */}
+  <div className="p-6 flex flex-col lg:grid lg:grid-cols-3 gap-6">
+    {/* Dashboard Section */}
     <div className="space-y-4">
       <h2 className="text-lg font-semibold text-gray-800">Dashboard</h2>
       <p className="text-sm text-gray-500">IPO Dashboard India</p>
@@ -21,7 +21,8 @@ const IPOAdminDashboardContent = () => (
       </div>
     </div>
 
-    <div className="border-t md:border-t-0 md:border-l border-gray-200 pl-0 md:pl-6 pr-6 pt-6 md:pt-0">
+    {/* Quick Links Section */}
+    <div className="border-t lg:border-t-0 lg:border-l border-gray-200 pl-0 lg:pl-6 pr-6 pt-6 lg:pt-0">
       <h2 className="text-lg font-semibold text-gray-800 mb-4">Quick Links</h2>
       <p className="text-sm text-gray-500 mb-2">Adipiscing elit, sed do eiusmod tempor</p>
       <div className="space-y-4">
@@ -34,6 +35,7 @@ const IPOAdminDashboardContent = () => (
       </div>
     </div>
 
+    {/* Main Board IPO Section */}
     <div className="border-t lg:border-t-0 lg:border-l border-gray-200 pl-0 lg:pl-6 pt-6 lg:pt-0">
       <div className="flex justify-between items-center mb-4">
         <div>
@@ -146,7 +148,6 @@ const AdminPanel = () => {
   );
 };
 
-// Sidebar Menu Component (Reusable)
 const SidebarMenu = ({ activeSection, setActiveSection }) => (
   <nav className="flex flex-col space-y-6 mt-6 text-gray-700 text-sm">
     <div className="text-gray-500 text-xs uppercase">Menu</div>

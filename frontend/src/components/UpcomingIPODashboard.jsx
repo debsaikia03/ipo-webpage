@@ -1,5 +1,7 @@
 // UpcomingIpoDashboard.jsx
 import React from "react";
+import { Link } from "react-router-dom";
+
 
 const ipoData = [
   {
@@ -23,7 +25,7 @@ const ipoData = [
     status: "Comming",
   },
   {
-    company: "Tata Motor",
+    company: "Tata Motors",
     priceBand: "₹ 12549 - 136",
     open: "2024-06-03",
     close: "2024-06-05",
@@ -46,9 +48,12 @@ export default function UpcomingIpoDashboard() {
     <div className="p-6">
       <div className="flex justify-between items-center mb-6">
         <h2 className="text-lg font-semibold">Upcomming IPO | Dashboard</h2>
-        <button className="bg-blue-500 text-white px-4 py-2 rounded shadow">
-          Register IPO
-        </button>
+        <Link to="/register-ipo">
+          <button className="bg-blue-500 text-white px-4 py-2 rounded shadow cursor-pointer">
+            Register IPO
+          </button>
+        </Link>
+
       </div>
 
       <div className="overflow-x-auto bg-white shadow rounded-lg">
